@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { data } from ''
+import { data } from './data/average-daily-data'
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts'
 
 const range = ['2020-01-15', '2020-08-15']
@@ -35,26 +35,29 @@ function filterbyDate(arr1, range) {
 
 export const AverageDaily = () => {
   const [rows, setRows] = useState([])
+  const [redAmount, setRedAmount] = useState({})
   useEffect(() => {
     function getData(data) {
       const first = filterbyDate(data, range)
       const secound = reducedValue(first)
-      setRows(res)
+      console.log(secound)
+      setRows(first)
+      setRedAmount(secound)
       return first
     }
     const res = getData(data)
    
-  }, [rows])
+  }, [])
 
  
 
   return (
     <div className="App">
-      <h6>Average daily </h6>
+      <h4>`Average daily rate over the period displyes is ${redAmount.rate}` </h4>
       <BarChart
-        width={730}
+        width={1200}
         height={450}
-        data={data}
+        data={rows}
         margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />

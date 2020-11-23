@@ -40,7 +40,7 @@ export const data = [{
     },
     {
         date: '2020-01-11',
-        rate: 11443
+        rate: 780
     },
     {
         date: '2020-01-13',
@@ -232,7 +232,7 @@ export const data = [{
     },
     {
         date: '2020-06-23',
-        rate: 14421
+        rate: 650
     },
     {
         date: '2020-06-28',
@@ -271,7 +271,7 @@ export const data = [{
     },
     {
         date: '2020-07-20',
-        rate: 14421
+        rate: 550
     },
     {
         date: '2020-07-23',
@@ -291,10 +291,11 @@ export const data = [{
     },
     {
         date: '2020-07-27',
-        rate: 717.,    },
+        rate: 717
+        },
     {
         date: '2020-07-29',
-        rate: 989.9
+        rate: 900.9
     },
     {
         date: '2020-08-03',
@@ -461,7 +462,7 @@ export const data = [{
     },
     {
         date: '2020-10-23',
-        rate: 11443
+        rate: 830
     },
     {
         date: '2020-10-24',
