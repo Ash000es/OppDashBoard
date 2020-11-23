@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React,{useEffect,useState} from 'react'
+import {parse,Papa} from 'papaparse'
+import { readString } from 'react-papaparse'
+import{ChannelOpp} from './ChannelOpp'
+import {AverageDaily} from './AveragDaily'
 import './App.css';
 
-function App() {
+export default function App() {
+
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Property Manger opps center</h1>
+      {/* <AverageDaily/> */}
+      <ChannelOpp/>
+
+  
+  
+  
     </div>
   );
 }
 
-export default App;
+
