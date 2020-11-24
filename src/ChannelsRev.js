@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     width: '35%',
+    marginTop:'4rem',
     // border: '1px solid green',
     paddingLeft: '2rem',
   },
