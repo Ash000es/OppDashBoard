@@ -36,8 +36,9 @@ export const ChannelsRev = () => {
   const [totalrev, setTotalRev] = useState({})
   const [channels, setChannels] = useState([
     {name:'Airbnb', value:452500},
-    {name:'Booking', value:226250},
-    {name:'Expedia', value:226250}
+    {name:'Booking', value:206250},
+    {name:'Expedia', value:206250},
+    {name:'Vrbo', value:40000}
   ])
 
   useEffect(() => {
@@ -65,7 +66,7 @@ export const ChannelsRev = () => {
        ) })}</h4>
        </div>
        <div className={classes.chart}>
-      <PieChart width={800} height={550}>
+      <PieChart width={800} height={450} paddingAngle={40}>
       <Tooltip/>
   <Pie data={data} dataKey="revenue" nameKey="month" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" />
   <Pie data={channels} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={120} outerRadius={160} fill="#82ca9d" label />
