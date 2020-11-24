@@ -58,7 +58,7 @@ export const AverageDaily = () => {
         width={1200}
         height={450}
         data={rows}
-        margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
+        margin={{ top: 5, right: 5, bottom: 20, left: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
