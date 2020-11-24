@@ -6,13 +6,14 @@ import {AverageDaily} from './AveragDaily'
 import {AVGLOSvsBOOK} from './AVGlosAVGbook'
 import {TripleValueComp}from './TripleValuesComp'
 import {ChannelsRev}from './ChannelsRev'
+import Container from '@material-ui/core/Container';
 import './App.css';
 
 export default function App() {
 
  
   return (
-    <div className="App">
+    <Container fixed className="App"> 
       <h1>Property Manger opps center</h1>
       <AverageDaily/>
       <ChannelOpp/>
@@ -24,7 +25,7 @@ export default function App() {
   
   
   
-    </div>
+    </Container>
   );
 }
 

@@ -44,8 +44,8 @@ return (
     <h4>Aggregated AVG los is {avglos.los} days</h4>
     <h4>Aggregated AVG booking value is ${avgbvalue.bookingValue}</h4>
    
-<LineChart width={1200} height={450} data={data}
-  margin={{ top: 5, right: 30, left: 20, bottom: 20 }}>
+<LineChart width={1200} height={400} data={data}
+  margin={{ top: 40, right: 30, left: 20, bottom: 5 }}>
   <CartesianGrid strokeDasharray="3 3" />
   <XAxis dataKey="date" />
   <YAxis />
