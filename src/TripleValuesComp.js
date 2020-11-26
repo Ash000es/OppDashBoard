@@ -15,9 +15,9 @@ export const TripleValueComp = () => {
 
 }, [])
   return (
-    <div>
+    <div style={{width:640}}>
       {/* <h4>text</h4> */}
-      <ComposedChart width={1200} height={650} data={data} margin={{
+      <ComposedChart width={600} height={300} data={data} margin={{
         top: 10, right: 10, left: 10, bottom: 20,
       }}>
   <XAxis dataKey="month" />

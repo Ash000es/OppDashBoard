@@ -9,7 +9,7 @@ export const ChannelOpp = () => {
     <div>
       <h4> Percentage of active properties on channel</h4>
       <RadialBarChart
-        width={730}
+        width={640}
         height={250}
         innerRadius="30%"
         outerRadius="100%"

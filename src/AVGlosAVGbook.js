@@ -27,11 +27,11 @@ export const AVGLOSvsBOOK=(props)=>{
     getData()
 }, [])
 return (
-  <div>
+  <div style={{width:640}}>
     <h4>Aggregated AVG los is {avglos} days</h4>
     <LineChart
-      width={1200}
-      height={450}
+      width={600}
+      height={250}
       data={data}
       syncId="anyId"
       margin={{
@@ -47,8 +47,8 @@ return (
     </LineChart>
     <h4>Aggregated AVG booking value is ${avgbvalue}</h4>
     <AreaChart
-      width={1200}
-      height={450}
+      width={600}
+      height={250}
       data={data}
       syncId="anyId"
       margin={{

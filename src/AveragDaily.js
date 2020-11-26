@@ -24,11 +24,11 @@ export const AverageDaily = (props) => {
  
 
   return (
-    <div className="App">
+    <div style={{width:600}}>
       <h4>Aggregated Average daily rate over the period displyed is ${redAmount} </h4>
       <BarChart
-        width={1200}
-        height={450}
+        width={600}
+        height={300}
         data={rows}
         margin={{ top: 20, right: 5, bottom: 20, left: 5 }}
       >

@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { PieChart, Pie, Tooltip,Sector, Cell } from 'recharts'
 const useStyles = makeStyles((theme) => ({
   root: {
-    'width': 800,
-    'height': 550,
+    'width': 640,
+    'height': 400,
     margin: '1rem auto',
     display: 'flex',
     justifyContent: 'flex-start',
