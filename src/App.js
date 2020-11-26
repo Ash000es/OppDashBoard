@@ -12,6 +12,7 @@ import { HealthMeter } from './HealthMeter'
 import './App.css'
 
 export default function App() {
+  const range = ['2020-01-15', '2020-10-15']
   return (
     <React.Fragment>
       <CssBaseline />
@@ -21,8 +22,8 @@ export default function App() {
         <div><HealthMeter /></div>
         <div><ChannelOpp /></div>
         <div><ChannelsRev /></div>
-        <div><AVGLOSvsBOOK /></div>
-        <div><AverageDaily /></div>
+        <div><AVGLOSvsBOOK range= {range}/></div>
+        <div><AverageDaily range= {range}/></div>
         <div> <TripleValueComp /></div>
 
        
