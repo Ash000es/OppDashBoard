@@ -71,8 +71,8 @@ const renderCustomizedLabel = ({
   return (
     <div className={classes.root}>
       <div className={classes.info}>
-        <h4>Aggregated value of revenue is ${totalrev.revenue} </h4>
-        <h4>
+        <h5>Aggregated value of revenue is ${totalrev.revenue} </h5>
+        <h5>
           {' '}
           Break down per channel is{' '}
           {channels.map((chan) => {
@@ -84,7 +84,7 @@ const renderCustomizedLabel = ({
               </ul>
             )
           })}
-        </h4>
+        </h5>
       </div>
       <div className={classes.chart}>
         <PieChart width={500} height={400} paddingAngle={40}  >
