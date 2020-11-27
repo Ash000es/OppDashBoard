@@ -8,20 +8,18 @@ const useStyles = makeStyles((theme) => ({
     'height': 400,
     margin: '1rem auto',
     display: 'flex',
-    justifyContent: 'flex-start',
-    border: '1px solid black',
+    justifyContent: 'flex-start'
   },
   info: {
-    width: '35%',
+    width: '45%',
     marginTop:'4rem',
-    // border: '1px solid green',
     paddingLeft: '2rem',
+    color:'grey',
+    fontWeight:550
+    
   },
   chart: {
-    width: '65%',
-    // margin: 10,
-    // border: '1px solid red',
-    // paddingRight: '2rem',
+    width: '65%'
   },
 }))
 const reducedValue = (arr) => {
@@ -71,10 +69,8 @@ const renderCustomizedLabel = ({
   return (
     <div className={classes.root}>
       <div className={classes.info}>
-        <h5>Aggregated value of revenue is ${totalrev.revenue} </h5>
-        <h5>
-          {' '}
-          Break down per channel is{' '}
+        <h5>Aggregated revenue:</h5><p>{totalrev.revenue}$</p>
+        <h5>Breakdown:</h5>
           {channels.map((chan) => {
             return (
               <ul chan={chan} key={chan.name}>
@@ -84,7 +80,7 @@ const renderCustomizedLabel = ({
               </ul>
             )
           })}
-        </h5>
+        
       </div>
       <div className={classes.chart}>
         <PieChart width={500} height={400} paddingAngle={40}  >

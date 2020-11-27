@@ -4,6 +4,8 @@ import { DateRangePicker } from 'react-dates'
 import 'react-dates/lib/css/_datepicker.css'
 import './datePicker.css'
 import { convertDates } from './Helper/helpers'
+import moment from 'moment'
+
 
 export const DateSelection = (props) => {
   const screenWidth = props.width
@@ -13,6 +15,7 @@ export const DateSelection = (props) => {
   })
   const [focus, setFocus] = useState({ focusedInput: null })
   const block= true 
+
 
   useEffect(() => {
     if (state.startDate !== null && state.endDate !== null) {
@@ -33,6 +36,7 @@ export const DateSelection = (props) => {
         focusedInput={focus.focusedInput}
         onFocusChange={(focusedInput) => setFocus({ focusedInput })}
         block={block}
+        isOutsideRange={day => (moment().diff(day) < 0)}
       />
     </div>
   )
