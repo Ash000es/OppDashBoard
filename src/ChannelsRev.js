@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { tripleValuesCompare } from './data/bookings-revenue-data'
 import { makeStyles } from '@material-ui/core/styles'
-import { PieChart, Pie, Tooltip,Sector, Cell } from 'recharts'
+import { PieChart, Pie, Tooltip, Cell } from 'recharts'
 const useStyles = makeStyles((theme) => ({
   root: {
     'width': 640,
@@ -32,12 +32,12 @@ export const ChannelsRev = () => {
   const classes = useStyles()
   const [data, setData] = useState([])
   const [totalrev, setTotalRev] = useState({})
-  const [channels, setChannels] = useState([
+  const channels = [
     { name: 'Airbnb', value: 452500 },
     { name: 'Booking', value: 206250 },
     { name: 'Expedia', value: 206250 },
     { name: 'Vrbo', value: 40000 }
-  ])
+  ]
 
   useEffect(() => {
     function getData(arr) {

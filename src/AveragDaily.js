@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { data } from './data/average-daily-data'
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts'
-import { reducedValue, filterbyDate, groupBy } from './Helper/helpers'
+import { reducedValue, filterbyDate } from './Helper/helpers'
 
 export const AverageDaily = (props) => {
   const [rows, setRows] = useState([])
   const [redAmount, setRedAmount] = useState(0)
   const range = props.range
+  console.log(range,'lol')
  
 
   useEffect(() => {
     function getData(data) {
+      console.log(data,'kk')
       const filteredData = filterbyDate(data, range)
+      console.log(filteredData,'pp')
       const total = parseInt(reducedValue(filteredData, 'rate'))
       setRows(filteredData)
       setRedAmount(total)
       return filteredData
     }
-    const res = getData(data)
+     getData(data)
   }, [range])
 
   return (

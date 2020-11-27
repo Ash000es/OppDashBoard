@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Tooltip, Legend, Bar, RadialBarChart, RadialBar } from 'recharts'
+import React from 'react'
+import { Tooltip, Legend, RadialBarChart, RadialBar } from 'recharts'
 
 export const ChannelOpp = (props) => {
   const data= props.data

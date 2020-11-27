@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { ChannelOpp } from './ChannelOpp'
 import { AverageDaily } from './AveragDaily'
 import { AVGLOSvsBOOK } from './AVGlosAVGbook'
@@ -60,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom:'2rem',
     backgroundColor: 'white',
     borderRadius: '1.25rem',
-    marginTop: '1.25rem',
     boxShadow: '5px 10px 5px 10px #f0f0f0'
   },
   first: {
@@ -106,8 +105,6 @@ export default function App() {
 
   const [stay, setStay] = useState(['2020-01-01', '2020-12-31'])
   const handleDateChange = (NewDate1) => {
-    const checkIn = NewDate1[0]
-    const checkOut = NewDate1[1]
     setStay(NewDate1)
   }
 

@@ -20,7 +20,7 @@ export const HealthMeter = () => {
         failed: failed,
       })
     }
-    const res = getData(activeStatus)
+   getData(activeStatus)
   
   }, [])
   return (

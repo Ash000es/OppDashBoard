@@ -8,7 +8,7 @@ import moment from 'moment'
 
 
 export const DateSelection = (props) => {
-  const screenWidth = props.width
+
   const [state, setState] = useState({
     startDate: null,
     endDate: null,
