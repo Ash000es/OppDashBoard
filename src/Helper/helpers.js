@@ -29,7 +29,7 @@ export const sortData = (data) => {
         const length =arr.length - 1
         return accumulator + currentValue1 / length 
     }, initialValue)
-    console.log(sum,x)
+   
     return sum
   }
 

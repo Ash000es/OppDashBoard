@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { parse, Papa } from 'papaparse'
-import { readString } from 'react-papaparse'
 import { ChannelOpp } from './ChannelOpp'
 import { AverageDaily } from './AveragDaily'
 import { AVGLOSvsBOOK } from './AVGlosAVGbook'
@@ -10,7 +8,7 @@ import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { HealthMeter } from './HealthMeter'
 import { DateSelection } from './DatePicker'
-import {filterbyDate} from './Helper/helpers'
+import { data,data2 } from './data/channeloppdata'
 import './App.css'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -108,7 +106,6 @@ export default function App() {
   const handleDateChange = (NewDate1) => {
     const checkIn = NewDate1[0]
     const checkOut = NewDate1[1]
-    console.log(stay, 'date')
     setStay(NewDate1)
   }
 
@@ -135,8 +132,8 @@ export default function App() {
             <ChannelsRev />
           </div>
           <div className={classes.OppCon}>
-            <ChannelOpp />
-            <ChannelOpp />
+            <ChannelOpp data={data} />
+            <ChannelOpp data={data2}/>
           </div>
         </div>
         <div className={classes.thirdfourthContainer}>

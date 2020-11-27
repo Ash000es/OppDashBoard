@@ -35,4 +35,41 @@ export const data = [
       fill: '#ffc658',
     }
   ]
+  export const data2 = [
+    {
+      name: 'Homelike.com',
+      Percent: 0,
+      fill: '#8884d8',
+    },
+    {
+      name: 'C-Trip',
+      Percent: 0,
+      fill: '#83a6ed',
+    },
+    {
+      name: 'Trip',
+      Percent: 0,
+      fill: '#8dd1e1',
+    },
+    {
+      name: 'Feline',
+      Percent: 0,
+      fill: '#82ca9d',
+    },
+    {
+      name: 'Holidu',
+      Percent: 0,
+      fill: '#a4de6c',
+    },
+    {
+      name: 'Hometogo',
+      Percent: 0,
+      fill: '#d0ed57',
+    },
+    {
+      name: 'Oyo',
+      Percent: 0,
+      fill: '#ffc658',
+    }
+  ]
   

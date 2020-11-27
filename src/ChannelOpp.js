@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { data } from './data/channeloppdata'
 import { Tooltip, Legend, Bar, RadialBarChart, RadialBar } from 'recharts'
 
 export const ChannelOpp = (props) => {
-  
+  const data= props.data
 
   return (
     <div >
-      <h5>Online properties % on channel</h5>
+      <h5>Online properties % on channels</h5>
       <RadialBarChart
         width={500}
         height={220}

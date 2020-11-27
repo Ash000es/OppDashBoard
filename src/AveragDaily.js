@@ -7,7 +7,7 @@ export const AverageDaily = (props) => {
   const [rows, setRows] = useState([])
   const [redAmount, setRedAmount] = useState(0)
   const range = props.range
-  console.log(range,'range')
+ 
 
   useEffect(() => {
     function getData(data) {
