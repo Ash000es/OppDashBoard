@@ -53,6 +53,7 @@ export const sortData = (data) => {
       const firstrange = dat.date
       const secoundrange = dat.date
       if (firstrange >= min && secoundrange <= max) {
+        console.log('filtering...')
         return dat
       }
     
