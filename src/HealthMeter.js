@@ -4,7 +4,6 @@ import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
 const activeStatus = {
   totalNumber: 10000,
-
   Active: 6500,
   Inactive: 3500,
 }
@@ -22,11 +21,11 @@ export const HealthMeter = () => {
       })
     }
     const res = getData(activeStatus)
-    console.log(res, 'pp')
+  
   }, [])
   return (
     <div>
-      <h5> Active vs Inactive properties status</h5>
+      <h5> Active vs Inactive status</h5>
       <div><h5>24 hours Last change: <ArrowDropUpIcon style={{color:'green'}}/>1400 properties</h5> </div>
       <ProgressBar>
       <ProgressBar variant="success" now={data.success} label={`${data.success}%`} key={1} />;
