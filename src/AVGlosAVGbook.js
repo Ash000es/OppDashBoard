@@ -31,7 +31,7 @@ return (
     <h4>Aggregated AVG los is {avglos} days</h4>
     <LineChart
       width={600}
-      height={250}
+      height={300}
       data={data}
       syncId="anyId"
       margin={{
@@ -45,10 +45,10 @@ return (
       <Line type="monotone" dataKey="los" stroke="#82ca9d" fill="#82ca9d" />
       <Brush />
     </LineChart>
-    <h4>Aggregated AVG booking value is ${avgbvalue}</h4>
+    
     <AreaChart
       width={600}
-      height={250}
+      height={300}
       data={data}
       syncId="anyId"
       margin={{
@@ -61,6 +61,7 @@ return (
       <Tooltip />
       <Area type="monotone" dataKey="bookingValue" stroke="#82ca9d" fill="#82ca9d" />
     </AreaChart>
+    <h4>Aggregated AVG booking value is ${avgbvalue}</h4>
   </div>
 )
 

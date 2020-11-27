@@ -1,3 +1,15 @@
+export const convertDates = (startDate, endDate) => {
+  const checkIn = startDate._d
+  const checkOut = endDate._d
+  const datesArray = Array.of(checkIn, checkOut)
+  const date1 = datesArray.map((i) => i.toLocaleDateString())
+  const date2 = date1.map((i) => i.replace('/', '-').replace('/', '-'))
+  const date3 = date2.map((i) => i.split('-'))
+  const date4 = date3.map((i) => i.reverse())
+  const finalDate = date4.map((i) => i.join('-'))
+  return finalDate
+}
+
 export const sortData = (data) => {
     const final = []
     data.forEach((dat) => {
