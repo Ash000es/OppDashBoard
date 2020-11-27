@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { HealthMeter } from './HealthMeter'
 import { DateSelection } from './DatePicker'
+import {filterbyDate} from './Helper/helpers'
 import './App.css'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -107,7 +108,7 @@ export default function App() {
   const handleDateChange = (NewDate1) => {
     const checkIn = NewDate1[0]
     const checkOut = NewDate1[1]
-    console.log(NewDate1, 'date')
+    console.log(stay, 'date')
     setStay(NewDate1)
   }
 
@@ -144,11 +145,11 @@ export default function App() {
           </div>
           <div className={classes.fourth}>
             <div>
-              <AverageDaily range={stay} />
+              <AverageDaily range={stay}/>
             </div>
             <div>
               {' '}
-              <TripleValueComp />
+              <TripleValueComp range={stay} />
             </div>
           </div>
         </div>
