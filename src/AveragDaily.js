@@ -35,7 +35,7 @@ export const AverageDaily = (props) => {
         <XAxis dataKey="date" />
         <YAxis />
         <Tooltip />
-        <Legend style={{marginTop:10}}/>
+        {/* <Legend style={{marginTop:20}}/> */}
         <Bar dataKey="rate" fill="#8884d8" />
       </BarChart>
     </div>

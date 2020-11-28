@@ -39,12 +39,13 @@ export const TripleValueComp = (props) => {
         
         <YAxis />
         <Tooltip />
-        <Legend style={{marginTop:10}} />
+        {/* <Legend style={{marginTop:'10px !important'}} /> */}
         <XAxis dataKey="month" />
         <Area dataKey="bookings" type="monotone" fill="#8884d8" stroke="#8884d8" />
         <Bar dataKey="Room nights" barSize={20} fill="#413ea0" />
         <Line dataKey="Booking window" type="monotone" stroke="#ff7300" />
       </ComposedChart>
+      <h5>Bookings numbers-nights sold-AVG booking window</h5>
     </div>
   )
 }

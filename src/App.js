@@ -97,7 +97,6 @@ const useStyles = makeStyles((theme) => ({
 
   },
   thirdfourthContainer: {
-    height:800,
     marginTop:'2rem',
     marginBottom:'4rem',
     display: 'flex',
