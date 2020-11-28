@@ -30,14 +30,14 @@ export const AVGLOSvsBOOK=(props)=>{
 }, [range])
 return (
   <div >
-    <h5>Aggregated AVG los is {avglos} days</h5>
+    <h5>Aggregated AVG los:{avglos} days</h5>
     <LineChart
       width={580}
       height={300}
       data={data}
       syncId="anyId"
       margin={{
-        top: 10, right: 0, left: 0, bottom: 0,
+        top: 10, right: 20, left: 0, bottom: 5,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
@@ -54,7 +54,7 @@ return (
       data={data}
       syncId="anyId"
       margin={{
-        top: 10, right: 30, left: 0, bottom: 0,
+        top: 10, right: 20, left: 0, bottom: 5,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
@@ -63,7 +63,7 @@ return (
       <Tooltip />
       <Area type="monotone" dataKey="bookingValue" stroke="#82ca9d" fill="#82ca9d" />
     </AreaChart>
-    <h5>Aggregated AVG booking value is ${avgbvalue}</h5>
+    <h5>Aggregated AVG booking value:{avgbvalue}$</h5>
   </div>
 )
 

@@ -24,23 +24,25 @@ export const TripleValueComp = (props) => {
   return (
     <div>
       <ComposedChart
-        width={580}
+        width={600}
         height={300}
         data={data}
         margin={{
           top: 10,
-          right: 0,
+          right: 10,
           left: 10,
-          bottom: 20,
+          bottom: 10,
         }}
       >
-        <XAxis dataKey="month" />
+     
+     <CartesianGrid stroke="#f5f5f5" />
+        
         <YAxis />
         <Tooltip />
-        <Legend />
-        <CartesianGrid stroke="#f5f5f5" />
+        <Legend style={{marginTop:10}} />
+        <XAxis dataKey="month" />
         <Area dataKey="bookings" type="monotone" fill="#8884d8" stroke="#8884d8" />
-        <Bar dataKey="Room nights" barSize={40} fill="#413ea0" />
+        <Bar dataKey="Room nights" barSize={20} fill="#413ea0" />
         <Line dataKey="Booking window" type="monotone" stroke="#ff7300" />
       </ComposedChart>
     </div>

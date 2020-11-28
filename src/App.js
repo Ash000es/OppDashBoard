@@ -11,16 +11,17 @@ import { DateSelection } from './DatePicker'
 import { data,data2 } from './data/channeloppdata'
 import './App.css'
 import { makeStyles } from '@material-ui/core/styles'
+const headline='Online properties % on active channels'
+const headline2='Inactive channels opportunity'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100vh',
+
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    border: '1px red #1890ff',
     backgroundColor: '#fafafa',
     borderRadius: '1.25rem',
     marginTop:25
@@ -31,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#1890ff',
     color: 'white',
     borderRadius: '1.1rem',
-    border: '2px solid black',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     margin: '2rem',
     borderRadius:'1.25rem',
-    boxShadow: '5px 10px 5px 10px #e6f7ff'
+    boxShadow: '5px 10px 5px 5px #e6f7ff'
     
   },
   secound: {
@@ -84,13 +84,20 @@ const useStyles = makeStyles((theme) => ({
     borderRadius:'1.25rem',
     width:"100%",
     boxShadow: '5px 10px 5px 5px #f0f0f0'
+   
   },
   fourth: {
     borderRadius:'1rem',
     width:"100%",
     boxShadow: '5px 10px 5px 5px #f0f0f0'
   },
+  daily:{
+    marginBottom:5,
+    marginRight:5,
+
+  },
   thirdfourthContainer: {
+    height:800,
     marginTop:'2rem',
     marginBottom:'4rem',
     display: 'flex',
@@ -100,6 +107,7 @@ const useStyles = makeStyles((theme) => ({
    
   },
 }))
+
 export default function App() {
   const classes = useStyles()
 
@@ -112,7 +120,7 @@ export default function App() {
     <React.Fragment>
       <CssBaseline />
 
-      <Container fixed className={classes.root}>
+      <Container className={classes.root}>
         <div className={classes.firstCon}>
           <div className={classes.headline}>
             <h2>Account Management dashboard</h2>
@@ -131,8 +139,8 @@ export default function App() {
             <ChannelsRev />
           </div>
           <div className={classes.OppCon}>
-            <ChannelOpp data={data} />
-            <ChannelOpp data={data2}/>
+            <ChannelOpp data={data} headline={headline}/>
+            <ChannelOpp data={data2} headline={headline2}/>
           </div>
         </div>
         <div className={classes.thirdfourthContainer}>
@@ -140,7 +148,7 @@ export default function App() {
             <AVGLOSvsBOOK range={stay} />
           </div>
           <div className={classes.fourth}>
-            <div>
+            <div className={classes.daily}>
               <AverageDaily range={stay}/>
             </div>
             <div>

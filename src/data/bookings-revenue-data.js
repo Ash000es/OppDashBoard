@@ -1,5 +1,5 @@
 export const tripleValuesCompare = [{
-        month: 'January',
+        month: 'Jan',
         bookings: 603,
         revenue: 160000,
         'Room nights': 1200,
@@ -8,7 +8,7 @@ export const tripleValuesCompare = [{
             {name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Expedia', vale:20000}]
     },
     {
-        month: 'February',
+        month: 'Feb',
         bookings: 215,
         revenue: 85000,
         'Room nights': 800,
@@ -56,7 +56,7 @@ export const tripleValuesCompare = [{
         Channels:[{name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Expedia', vale:20000}]
     },
     {
-        month: 'August',
+        month: 'Aug',
         bookings: 500,
         revenue: 140000,
         'Room nights': 950,
@@ -64,7 +64,7 @@ export const tripleValuesCompare = [{
         Channels:[{name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Expedia', vale:20000}]
     },
     {
-        month: 'September',
+        month: 'Sept',
         bookings: 400,
         revenue: 100000,
         'Room nights': 700,
@@ -72,7 +72,7 @@ export const tripleValuesCompare = [{
 ,
 Channels:[{name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Expedia', vale:20000}]    },
     {
-        month: 'October',
+        month: 'Oct',
         bookings: 250,
         revenue: 60000,
         'Room nights': 550,
@@ -80,7 +80,7 @@ Channels:[{name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Exp
         Channels:[{name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Expedia', vale:20000}]
     },
     {
-        month: 'November',
+        month: 'Nov',
         bookings: 150,
         revenue: 25000,
         'Room nights': 400,
@@ -88,7 +88,7 @@ Channels:[{name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Exp
         Channels:[{name:'Airbnb', value:100000},{name:'Booking', value:40000},{name:'Expedia', vale:20000}]
     },
     {
-        month: 'December',
+        month: 'Dec',
         bookings: 100,
         revenue: 15000,
         'Room nights': 300,

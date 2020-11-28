@@ -3,10 +3,11 @@ import { Tooltip, Legend, RadialBarChart, RadialBar } from 'recharts'
 
 export const ChannelOpp = (props) => {
   const data= props.data
+  const headline= props.headline
 
   return (
     <div >
-      <h5>Online properties % on channels</h5>
+      <h5>{headline}</h5>
       <RadialBarChart
         width={500}
         height={220}

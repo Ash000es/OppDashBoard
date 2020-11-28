@@ -7,14 +7,13 @@ export const AverageDaily = (props) => {
   const [rows, setRows] = useState([])
   const [redAmount, setRedAmount] = useState(0)
   const range = props.range
-  console.log(range,'lol')
+  
  
 
   useEffect(() => {
     function getData(data) {
-      console.log(data,'kk')
+      
       const filteredData = filterbyDate(data, range)
-      console.log(filteredData,'pp')
       const total = parseInt(reducedValue(filteredData, 'rate'))
       setRows(filteredData)
       setRedAmount(total)
@@ -30,13 +29,13 @@ export const AverageDaily = (props) => {
         width={600}
         height={300}
         data={rows}
-        margin={{ top: 20, right: 0, bottom: 20, left: 5 }}
+        margin={{ top: 20, right: 10, bottom: 20, left: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis />
         <Tooltip />
-        <Legend />
+        <Legend style={{marginTop:10}}/>
         <Bar dataKey="rate" fill="#8884d8" />
       </BarChart>
     </div>
