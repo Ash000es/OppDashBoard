@@ -68,7 +68,7 @@ const renderCustomizedLabel = ({
   return (
     <div className={classes.root}>
       <div className={classes.info}>
-        <h5>Aggregated revenue:</h5><p>{totalrev}$</p>
+        <h5>Aggregated revenue:</h5><p>{parseInt(totalrev)}$</p>
         <h5>Breakdown:</h5>
           {channels.map((chan) => {
             return (
