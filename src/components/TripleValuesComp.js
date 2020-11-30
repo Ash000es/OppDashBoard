@@ -1,18 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { tripleValuesCompare } from './data/bookings-revenue-data'
-import {revData} from './data/revData'
-import {reducedValue,filterbyDate,combineData} from './Helper/helpers'
-import {
-  Line,
-  Bar,
-  Area,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  ComposedChart,
-} from 'recharts'
+import { tripleValuesCompare } from '../data/bookings-revenue-data'
+import {Line, Bar, Area,CartesianGrid, XAxis,YAxis,Tooltip,ComposedChart} from 'recharts'
 
 export const TripleValueComp = (props) => {
   const [data, setData] = useState([])
@@ -41,7 +29,7 @@ export const TripleValueComp = (props) => {
         
         <YAxis />
         <Tooltip />
-        {/* <Legend style={{marginTop:'10px !important'}} /> */}
+    
         <XAxis dataKey="month" />
         <Area dataKey="bookings" type="monotone" fill="#8884d8" stroke="#8884d8" />
         <Bar dataKey="Room nights" barSize={20} fill="#413ea0" />

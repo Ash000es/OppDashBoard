@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { data } from './data/average-daily-data'
-import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts'
-import { reducedValue, filterbyDate } from './Helper/helpers'
+import { data } from '../data/average-daily-data'
+import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from 'recharts'
+import { reducedValue, filterbyDate } from '../Helper/helpers'
 
 export const AverageDaily = (props) => {
   const [rows, setRows] = useState([])

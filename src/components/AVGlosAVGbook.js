@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import {avgLOS} from './data/average-length-of-stay-YR'
-import {avgBookingValue} from './data/average-booking-value-YR'
-import {reducedValue,filterbyDate,combineData} from './Helper/helpers'
+import {avgLOS} from '../data/average-length-of-stay-YR'
+import {avgBookingValue} from '../data/average-booking-value-YR'
+import {reducedValue,filterbyDate,combineData} from '../Helper/helpers'
 import {  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Brush, AreaChart, Area, } from 'recharts'
 
 

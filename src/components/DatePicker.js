@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { DateRangePicker } from 'react-dates'
 import 'react-dates/lib/css/_datepicker.css'
 import './datePicker.css'
-import { convertDates } from './Helper/helpers'
+import { convertDates } from '../Helper/helpers'
 import moment from 'moment'
 
 

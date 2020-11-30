@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { revdata } from './data/revData'
+import { revdata } from '../data/revData'
 import { makeStyles } from '@material-ui/core/styles'
 import { PieChart, Pie, Tooltip, Cell } from 'recharts'
-import {formatData,filterbyDate,channelsShare, reducedValue} from './Helper/helpers'
+import {formatData,filterbyDate,channelsShare, reducedValue} from '../Helper/helpers'
 const useStyles = makeStyles((theme) => ({
   root: {
     'width': 640,
@@ -39,7 +39,7 @@ export const ChannelsRev = (props) => {
       const filteredData = filterbyDate(data, range)
       const groupedDates = formatData(filteredData)
       const totalReducedValue = reducedValue(groupedDates,'revenue')
-      console.log(totalReducedValue,'pp')
+     
       const channelShareTotal= channelsShare(totalReducedValue)
       setData(groupedDates)
       setTotalRev(totalReducedValue)
