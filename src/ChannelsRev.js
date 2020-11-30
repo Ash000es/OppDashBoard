@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { tripleValuesCompare } from './data/bookings-revenue-data'
+import { revdata } from './data/revData'
 import { makeStyles } from '@material-ui/core/styles'
 import { PieChart, Pie, Tooltip, Cell } from 'recharts'
+import {formatData,filterbyDate,channelsShare, reducedValue} from './Helper/helpers'
 const useStyles = makeStyles((theme) => ({
   root: {
     'width': 640,
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   info: {
     width: '45%',
     marginTop:'4rem',
-    paddingLeft: '2rem',
+    paddingLeft: '1rem',
     color:'grey',
     fontWeight:550
     
@@ -22,33 +23,31 @@ const useStyles = makeStyles((theme) => ({
     width: '65%'
   },
 }))
-const reducedValue = (arr) => {
-  return arr.reduce((prev, cur) => {
-    return { revenue: parseInt(prev.revenue + cur.revenue) }
-  })
-}
 
-export const ChannelsRev = () => {
+
+export const ChannelsRev = (props) => {
+  const range= props.range
   const classes = useStyles()
   const [data, setData] = useState([])
-  const [totalrev, setTotalRev] = useState({})
-  const channels = [
-    { name: 'Airbnb', value: 452500 },
-    { name: 'Booking', value: 206250 },
-    { name: 'Expedia', value: 206250 },
-    { name: 'Vrbo', value: 40000 }
-  ]
+  const [totalrev, setTotalRev] = useState()
+  const [channels, setChannels] = useState([])
+  
+
 
   useEffect(() => {
-    function getData(arr) {
-      setData(arr)
-      const res = reducedValue(arr)
-      setTotalRev(res)
+    function getData(data) {
+      const filteredData = filterbyDate(data, range)
+      const groupedDates = formatData(filteredData)
+      const totalReducedValue = reducedValue(groupedDates,'revenue')
+      console.log(totalReducedValue,'pp')
+      const channelShareTotal= channelsShare(totalReducedValue)
+      setData(groupedDates)
+      setTotalRev(totalReducedValue)
+      setChannels(channelShareTotal)
+    
     }
-    getData(tripleValuesCompare)
-  }, [])
-
-
+    getData(revdata)
+  }, [range])
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -69,7 +68,7 @@ const renderCustomizedLabel = ({
   return (
     <div className={classes.root}>
       <div className={classes.info}>
-        <h5>Aggregated revenue:</h5><p>{totalrev.revenue}$</p>
+        <h5>Aggregated revenue:</h5><p>{totalrev}$</p>
         <h5>Breakdown:</h5>
           {channels.map((chan) => {
             return (
@@ -83,12 +82,12 @@ const renderCustomizedLabel = ({
         
       </div>
       <div className={classes.chart}>
-        <PieChart width={500} height={400} paddingAngle={40}  >
+        <PieChart width={480} height={300} paddingAngle={40}  >
       
           <Pie
             data={data}
             dataKey="revenue"
-            nameKey="month"
+            nameKey="name"
             cx="50%"
             cy="50%"
             outerRadius={75}

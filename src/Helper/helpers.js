@@ -10,16 +10,31 @@ export const convertDates = (startDate, endDate) => {
   return finalDate
 }
 
-export const sortData = (data) => {
-    const final = []
-    data.forEach((dat) => {
-      const split = dat.date.split('-')
-      // const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
-      if (split[1] === '01'|| '02' || '03' || '04' || '05' || '06' || '07' || '08'||'09' ||'10'|| '11'||'12') {
-        final.push(dat)
-      }
-    })
-    return final
+const reducer = (accumulator, currentValue) => accumulator + currentValue
+export const sortData = (arr) => {
+    const year1 ={
+      '01':[],
+      '02':[],
+      '03':[],
+      '04':[],
+      '05':[],
+      '06':[],
+      '07':[],
+      '08':[],
+      '09':[],
+      '10':[],
+      '11':[],
+      '12':[]
+    }
+    const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+    arr.forEach((dat) => months.forEach(month =>{
+      const split = dat.date.slice(5,7)
+      if (split === month ) {
+        const value=dat.rate
+        year1[month].push(value)
+      }}
+    ))
+    return year1
   }
 
   export const reducedValue = (arr,x) => {
@@ -53,7 +68,7 @@ export const sortData = (data) => {
       const firstrange = dat.date
       const secoundrange = dat.date
       if (firstrange >= min && secoundrange <= max) {
-        console.log('filtering.....')
+      
         return dat
       }
     
@@ -70,4 +85,59 @@ export const sortData = (data) => {
         }
     }))
     return final
+}
+
+
+ export const reducedObjectValues=(obj)=>{
+ 
+  const newvalues=[]
+  for (const [key, value] of Object.entries(obj)) {
+    const newvalue= value.reduce(reducer,0)
+     newvalues.push({
+      date:key,
+      rate:newvalue.toFixed()
+    }) 
+  }
+ 
+  return newvalues
+ }
+ 
+
+
+export const formatData=(data)=>{
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const dataByMonth= data.reduce(function(dataByMonth, datum){
+  const date  = new Date(datum.date);
+  const revenue = datum.rate;
+  const month = monthNames[date.getMonth()];
+  const year  = ('' + date.getFullYear()).slice(-2);
+  const group = month + '\'' + year;
+
+  dataByMonth[group] = (dataByMonth[group] || 0) + revenue;
+
+  return dataByMonth;
+}, {});
+
+const finalResult = Object.keys(dataByMonth).map(function(group){
+  return { name: group, revenue: dataByMonth[group] };
+});
+
+return finalResult
+}
+
+export const channelsShare =(totalrev)=>{
+  const Airbnb = parseInt(totalrev * 0.50 )
+   const Booking= parseInt(totalrev * 0.23)
+  const Expedia = parseInt(totalrev * 0.23)
+  const Vrbo = parseInt(totalrev * 0.04)
+
+  return  [
+    { name: 'Airbnb', value: Airbnb },
+    { name: 'Booking', value: Booking },
+    { name: 'Expedia', value: Expedia},
+    { name: 'Vrbo', value: Vrbo}
+  ]
+
+
 }

@@ -11,6 +11,7 @@ import { DateSelection } from './DatePicker'
 import { data,data2 } from './data/channeloppdata'
 import './App.css'
 import { makeStyles } from '@material-ui/core/styles'
+import {RevTimeline} from './RevTimeline'
 const headline='Online properties % on active channels'
 const headline2='Inactive channels opportunity'
 
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '1.1rem',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   dateCon: {
     width: '100%',
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: 'white',
     width: 600,
-    position: 'absolute',
+    position: 'absolute'
    
   },
   zero: {
@@ -93,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
   },
   daily:{
     marginBottom:5,
-    marginRight:5,
+    marginRight:5
 
   },
   thirdfourthContainer: {
@@ -102,9 +103,15 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     borderRadius:'1.25rem',
     boxShadow: '5px 10px 5px 10px #e6f7ff',
-    width: '100%',
+    width: '100%'
    
   },
+  rev:{
+    borderRadius:'1.25rem',
+    boxShadow: '5px 10px 5px 10px #e6f7ff',
+    width: '100%',
+    marginBottom:'4rem'
+  }
 }))
 
 export default function App() {
@@ -135,7 +142,7 @@ export default function App() {
 
         <div className={classes.first}>
           <div className={classes.secound}>
-            <ChannelsRev />
+            <ChannelsRev range={stay}  />
           </div>
           <div className={classes.OppCon}>
             <ChannelOpp data={data} headline={headline}/>
@@ -155,7 +162,9 @@ export default function App() {
               <TripleValueComp range={stay} />
             </div>
           </div>
+          
         </div>
+        <div className={classes.rev}><RevTimeline range={stay}/></div>
       </Container>
     </React.Fragment>
   )

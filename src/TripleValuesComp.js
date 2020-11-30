@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { tripleValuesCompare } from './data/bookings-revenue-data'
+import {revData} from './data/revData'
+import {reducedValue,filterbyDate,combineData} from './Helper/helpers'
 import {
   Line,
   Bar,
