@@ -17,7 +17,13 @@ const reducer = (accumulator, currentValue) => accumulator + currentValue
     let sum = arr.reduce(function (accumulator, currentValue) {
         let currentValue1 =currentValue[x]
         const length =arr.length - 1
-        return accumulator + currentValue1 / length 
+        if (x === 'revenue'){
+         return accumulator + currentValue1
+        } else {
+          return accumulator + currentValue1 / length 
+
+        }
+        
     }, initialValue)
    
     return sum

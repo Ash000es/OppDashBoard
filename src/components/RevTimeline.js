@@ -13,7 +13,9 @@ export const RevTimeline = (props) => {
     function getData(data) {
       const filteredData = filterbyDate(data, range)
       const groupedDates = formatData(filteredData)
+      console.log(groupedDates,'oo')
       const totalReducedValue = reducedValue(groupedDates,'revenue')
+      console.log(totalReducedValue,'ll')
         setRows(groupedDates)
         setRedAmount(totalReducedValue)
     
@@ -22,7 +24,7 @@ export const RevTimeline = (props) => {
   }, [range])
   return (
     <div>
-      <h5>Aggregated revenue:{redAmount.toFixed()}</h5>
+      <h5>Aggregated revenue:{redAmount}</h5>
       <BarChart
         width={1200}
         height={500}
