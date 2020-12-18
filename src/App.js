@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     backgroundColor: '#fafafa',
     borderRadius: '1.25rem',
-    marginTop:25
+    marginTop:25,
+    minWidth:750
   },
   firstCon: {
     width: '100%',

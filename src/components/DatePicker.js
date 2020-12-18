@@ -6,22 +6,19 @@ import './datePicker.css'
 import { convertDates } from '../Helper/helpers'
 import moment from 'moment'
 
-
-export const DateSelection = (props) => {
-
+export const DateSelection = ({ onChange }) => {
   const [state, setState] = useState({
     startDate: null,
-    endDate: null,
+    endDate: null
   })
- 
-  const [focus, setFocus] = useState({ focusedInput: null })
-  const block= true 
 
+  const [focus, setFocus] = useState({ focusedInput: null })
+  const block = true
 
   useEffect(() => {
     if (state.startDate !== null && state.endDate !== null) {
       const final = convertDates(state.startDate, state.endDate)
-      props.onChange(final)
+      onChange(final)
     }
   }, [state])
 
@@ -30,14 +27,14 @@ export const DateSelection = (props) => {
       <DateRangePicker
         enableOutsideDays
         startDate={state.startDate}
-        startDateId="your_unique_start_date_id"
+        startDateId='your_unique_start_date_id'
         endDate={state.endDate}
-        endDateId="your_unique_end_date_id"
+        endDateId='your_unique_end_date_id'
         onDatesChange={({ startDate, endDate }) => setState({ startDate, endDate })}
         focusedInput={focus.focusedInput}
         onFocusChange={(focusedInput) => setFocus({ focusedInput })}
         block={block}
-        isOutsideRange={day => (moment().diff(day) < 0)}
+        isOutsideRange={(day) => moment().diff(day) < 0}
       />
     </div>
   )

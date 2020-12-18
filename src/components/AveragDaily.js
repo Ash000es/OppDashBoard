@@ -3,23 +3,19 @@ import { data } from '../data/average-daily-data'
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from 'recharts'
 import { reducedValue, filterbyDate } from '../Helper/helpers'
 
-export const AverageDaily = (props) => {
+export const AverageDaily = ({ range }) => {
   const [rows, setRows] = useState([])
   const [redAmount, setRedAmount] = useState(0)
-  const range = props.range
-  
- 
 
   useEffect(() => {
     function getData(data) {
-      
       const filteredData = filterbyDate(data, range)
       const total = parseInt(reducedValue(filteredData, 'rate'))
       setRows(filteredData)
       setRedAmount(total)
       return filteredData
     }
-     getData(data)
+    getData(data)
   }, [range])
 
   return (
@@ -31,12 +27,12 @@ export const AverageDaily = (props) => {
         data={rows}
         margin={{ top: 20, right: 10, bottom: 20, left: 5 }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='date' />
         <YAxis />
         <Tooltip />
         {/* <Legend style={{marginTop:20}}/> */}
-        <Bar dataKey="rate" fill="#8884d8" />
+        <Bar dataKey='rate' fill='#8884d8' />
       </BarChart>
     </div>
   )
